@@ -2,10 +2,11 @@
 
 问题来源：[大模型（LLMs） 算法工程师相关的面试题](https://github.com/km1994/LLMs_interview_notes "大模型（LLMs） 算法工程师相关的面试题")
 
+在线阅读：[LLMs 八股文](https://wdndev.github.io/note/llm/llm_concept/index.html)
+
 ## 更新记录
 
-
-
+- 2023.11.10 ： 4.LangChain
 - 2023.11.08 ： 建立仓库；1.基础，2.进阶，3.微调
 
 ## 注意：
