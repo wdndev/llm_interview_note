@@ -2,10 +2,11 @@
 
 问题来源：[大模型（LLMs） 算法工程师相关的面试题](https://github.com/km1994/LLMs_interview_notes "大模型（LLMs） 算法工程师相关的面试题")
 
-在线阅读：[LLMs 八股文](https://wdndev.github.io/note/llm/llm_concept/index.html)
+在线阅读：[LLMs 八股文](https://wdndev.github.io/note/llm/llm_concept/llm八股.html)
 
 ## 更新记录
 
+- 2023.11.23 ： 6.推理， 7.预训练， 8.评测，9.强化学习， 11.训练数据集，12.显存问题,14.agent
 - 2023.11.22 ： 5.高效微调
 - 2023.11.10 ： 4.LangChain
 - 2023.11.08 ： 建立仓库；1.基础，2.进阶，3.微调
