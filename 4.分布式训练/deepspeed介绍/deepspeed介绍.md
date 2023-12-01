@@ -66,7 +66,7 @@ DeepSpeed的推理优化技术：
 -   Deep fusion：如下图，红色虚线框是以该单位为优化Kernel，对应的数字是优化的效率倍数
 -   Inference-customized GeMM
 
-![](image/image_DbW_zelI9w.png)
+![](image/image_T9tgx8Mk8X.png)
 
 ## **2. Zero（3D优化与卸载）**
 
@@ -107,19 +107,19 @@ ZeRO-Offload和ZeRO-Stage3是DeepSpeed中的不同的Zero-Redundancy Optimizatio
 
 混合精度训练是指在训练过程中同时使用FP16（半精度浮点数）和FP32（单精度浮点数）两种精度的技术。**使用FP16可以大大减少内存占用，从而可以训练更大规模的模型**。但是，**由于FP16的精度较低，训练过程中可能会出现梯度消失和模型不稳定的问题**。因此，需要使用一些技术来解决这些问题，例如\*\*动态精度缩放（Dynamic Loss Scaling）**和**混合精度优化器（Mixed Precision Optimizer）\*\*等。
 
-![](image/image_up7Dc3ThyG.png)
+![](image/image_VtTthb1apQ.png)
 
 deepspeed提供了混合精度训练的支持，可以通过在配置文件中设置`"fp16.enabled": true`来启用混合精度训练。在训练过程中，deepspeed会自动将一部分操作转换为FP16格式，并根据需要动态调整精度缩放因子，从而保证训练的稳定性和精度。
 
 在使用混合精度训练时，需要注意一些问题，例如梯度裁剪（Gradient Clipping）和学习率调整（Learning Rate Schedule）等。梯度裁剪可以防止梯度爆炸，学习率调整可以帮助模型更好地收敛。因此，在设置混合精度训练时，需要根据具体情况进行选择和配置。
 
-![](image/image_Y7Vxm57rF7.png)
+![](image/image_AUmedW1Tit.png)
 
 **BF16**
 
 **BF16和FP16都是混合精度训练中使用的浮点数表示格式**。
 
-![](image/image_EI57OzmNCm.png)
+![](image/image_E3ihcgMrxh.png)
 
 BF16是一种Brain Floating Point格式，由英特尔提出，可以提供更好的数值稳定性和更高的精度，但需要更多的存储空间。在混合精度训练中，**BF16可以作为一种精度更高的替代品，用于一些关键的计算操作，例如梯度累加和权重更新等**。使用BF16可以提高模型的训练速度和精度，并减少内存占用。
 
@@ -138,9 +138,9 @@ BF16是一种Brain Floating Point格式，由英特尔提出，可以提供更�
 
 **ZeRO-DP主要是优化第一部分的显存占用，所以这里主要介绍第一部分的显存。**&#x20;
 
-![](image/image_ATozsTKt_C.png)
+![](image/image_jYC5VEfqAD.png)
 
-![](image/image_YAn-YZBesV.png)
+![](image/image_NuL02TDu19.png)
 
 -   **将权重转换为FP16**：在这一步中，神经网络的权重（或参数）最初是FP32格式，被转换为低精度的FP16格式。这减少了内存的占用，并允许更快的计算，因为FP16操作需要更少的内存，并且可以被硬件更快地处理。 &#x20;
 -   **计算梯度**：神经网络的前向和后向通道是使用较低精度的FP16权重进行的。这一步计算损失函数相对于网络权重的梯度（部分导数），在优化过程中用于更新权重。
@@ -156,7 +156,7 @@ BF16是一种Brain Floating Point格式，由英特尔提出，可以提供更�
 
 总的来说，模型会消耗 $2Ψ+2Ψ=4Ψ$ ，Adam优化器这消耗$ 4Ψ+4Ψ+4Ψ=12Ψ $。最终的总消耗为 $4Ψ+12Ψ=16Ψ $。
 
-![](image/image_WzVm0oPCUQ.png)
+![](image/image_K0ZkfxRDNG.png)
 
 \*\*这里为了方便讨论，将优化器显存占用表示为 **$KΨ$** (不同的优化器不同)，则混合精度训练的显存占用为 **$4Ψ+KΨ$** 。 \*\*
 
@@ -186,7 +186,7 @@ ZeRO-DP(Zero Redundancy Optimizer-Data Parallelism)是来自于论文《ZeRO: Me
 
 这里os指的是optimizer
 
-![](image/image_YrPt319aZ7.png)
+![](image/image_rvdEaFImqy.png)
 
 看上去比较高大上，可能让你很难专心去理解，但实际上，这个概念非常简单。这只是通常的 DDP，只是没有每个 GPU 都复制完整的模型参数、梯度和优化器状态，而是每个 GPU 只存储其中的一部分。在随后的运行过程中，当需要给定层的完整层参数时，所有 GPU 同步以相互提供它们缺失的部分 —— 仅此而已。
 
@@ -198,15 +198,15 @@ ZeRO-DP(Zero Redundancy Optimizer-Data Parallelism)是来自于论文《ZeRO: Me
 
 总的来说，ZeRO-DP可以分为三个阶段：**Pos, Pg, Pp** 。三个阶段对应优化器状态划分、梯度划分和模型参数划分，并且三个阶段可以叠加使用(上图展示了三个阶段的叠加)。关于三个阶段是否会增加通信量，会在后面分析，目前先接受这三个阶段并不会显著增加通信开销。
 
-![](image/image_6bX5w87Xb0.png)
+![](image/image_hMLoWEoNt0.png)
 
-![](image/image_WLg_aQ90AL.png)
+![](image/image_eHqOM3AGuH.png)
 
-![](image/image_1c52elJQbT.png)
+![](image/image_ZmyQhiQtTy.png)
 
 在DeepSpeed中，一般使用ZeRO-1就足够了。
 
-![](image/image_6OL9ExFOFl.png)
+![](image/image_UWzEGnfD_-.png)
 
 ### 3.2 **ZeRO-DP通信量**
 
