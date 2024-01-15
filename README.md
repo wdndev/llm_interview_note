@@ -15,24 +15,25 @@
 
 相关答案为自己撰写，若有不合理地方，请指出修正，谢谢！
 
+相关内容会不定时同步到微信公众号，欢迎关注：
+
+![weixin](https://github.com/wdndev/personal/blob/main/image/llmers_weixin.jpg)
+
 ## 目录
 
 [01.大语言模型简介](01.大语言模型简介/01.大语言模型简介.md "01.大语言模型简介")
 
 - 大模型发展历程
-
 - 常见大模型
 
-  1.[llama系列模型](01.大语言模型简介/llama系列模型/llama系列模型.md "llama系列模型")
-
-  [chatglm系列模型](01.大语言模型简介/chatglm系列模型/chatglm系列模型.md "chatglm系列模型")
-
+  1. [llama系列模型](01.大语言模型简介/llama系列模型/llama系列模型.md "llama系列模型")
+2. [chatglm系列模型](01.大语言模型简介/chatglm系列模型/chatglm系列模型.md "chatglm系列模型")
 - LLM基础题目
 
 [02.大语言模型基础](02.大语言模型基础/02.大语言模型基础.md "02.大语言模型基础")
 
 - Transformer模型
-  2. [attention](02.大语言模型基础/1.attention/1.attention.md "1.attention")
+  1. [attention](02.大语言模型基础/1.attention/1.attention.md "1.attention")
   2. [layer\_normalization](02.大语言模型基础/2.layer_normalization/2.layer_normalization.md "2.layer_normalization")
   3. [位置编码](02.大语言模型基础/3.位置编码/3.位置编码.md "3.位置编码")
   4. [tokenize分词](02.大语言模型基础/4.tokenize分词/4.tokenize分词.md "4.tokenize分词")
@@ -101,8 +102,6 @@
 - LangChain 框架
 
 [99.参考资料](99.参考资料/99.参考资料.md "99.参考资料")
-
-
 
 ## 更新记录
 
