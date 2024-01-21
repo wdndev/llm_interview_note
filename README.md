@@ -105,7 +105,7 @@
 
 ## 更新记录
 
-- 2023.15.05 ： llama，chatglm 架构
+- 2023.12.15 ： llama，chatglm 架构
 - 2023.12.02 ：LLM推理优化技术
 - 2023.12.01 ：调整目录
 - 2023.11.30 ：18.Layer-Normalization，21.Attention升级
