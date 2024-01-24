@@ -15,7 +15,7 @@
 
 相关答案为自己撰写，若有不合理地方，请指出修正，谢谢！
 
-相关内容会不定时同步到微信公众号，欢迎关注：
+欢迎关注微信公众号，会不定期更新LLM内容，以及一些面试经验：
 
 ![weixin](https://github.com/wdndev/personal/blob/main/image/llmers_weixin.jpg)
 
