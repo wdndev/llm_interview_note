@@ -17,7 +17,8 @@
 
 欢迎关注微信公众号，会不定期更新LLM内容，以及一些面试经验：
 
-![weixin](https://github.com/wdndev/personal/blob/main/image/llmers_weixin.jpg)
+ <img src=https://github.com/wdndev/personal/blob/main/image/llmers_weixin.jpg width = "855" height = "312" alt="weixin" />
+
 
 ## 目录
 
