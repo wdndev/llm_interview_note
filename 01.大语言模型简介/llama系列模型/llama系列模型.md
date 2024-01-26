@@ -10,11 +10,11 @@ Open and Efficient Foundation Language Models (Open但没完全Open的LLaMA)&#x2
 
 LLaMA 所采用的 Transformer 结构和细节，与标准的 Transformer 架构不同的地方包括采用了**前置层归一化（Pre-normalization）**并使用 **RMSNorm 归一化函数** （Normalizing Function）、激活函数更换为** SwiGLU**，并使用了**旋转位置嵌入（RoP）**，整体 Transformer 架构与 GPT-2 类似。
 
-![](image/image_eU6FYCi7tM.png)
+![](image/image_8RALg7fgFy.png)
 
 ## 1.2 RMSNorm归一化函数
 
-**为了使得模型训练过程更加稳定**，GPT-2 相较于 GPT 就引入了**前置层归一化方法**，将第一个层归一化移动到多头自注意力层之前，第二个层归一化也移动到了全连接层之前，同时残差连接的位置也调整到了多头自注意力层与全连接层之后。层归一化中也采用了 **RMSNorm 归一化函数**。 针对输入向量 aRMSNorm 函数计算公式如下
+**为了使得模型训练过程更加稳定**，GPT-2 相较于 GPT 就引入了**前置层归一化方法**，将第一个层归一化移动到多头自注意力层之前，第二个层归一化也移动到了全连接层之前，同时残差连接的位置也调整到了多头自注意力层与全连接层之后。层归一化中也采用了 **RMSNorm 归一化函数**。 针对输入向量 RMSNorm 函数计算公式如下
 
 $$
 R M S(a)=\sqrt{\frac{1}{n} \sum_{i=1}^{n} a_{i}^{2}}
@@ -45,7 +45,7 @@ class LlamaRMSNorm(nn.Module):
     return (self.weight * hidden_states).to(input_dtype)
 ```
 
-## 1.3 SwiGLU计划函数
+## 1.3 SwiGLU激活函数
 
 SwiGLU激活函数是相较于 ReLU 函数在大部分评测中都有不少提升。在 LLaMA 中全连接层 使用带有 SwiGLU 激活函数的 FFN（Position-wise Feed-Forward Network）的计算公式如下：
 
@@ -63,11 +63,11 @@ $$
 
 其中，$σ(x)$ 是 Sigmoid 函数。下图给出了 Swish 激活函数在参数 $β$ 不同取值下的形状。可以看 到当 $β$ 趋近于 0 时，Swish 函数趋近于线性函数 $y = x$，当 $ β  $趋近于无穷大时，Swish 函数趋近于 ReLU 函数，$β$ 取值为 1 时，Swish 函数是光滑且非单调。在 HuggingFace 的 Transformer 库中 Swish1 函数使用 silu 函数代替。
 
-![](image/image_3ObxGlGf3u.png)
+![](image/image_bwL9N_jV5y.png)
+
+![](image/image_6g6JVd5GoX.png)
 
 LLaMA中直接将FFN中的ReLU替换为SwiGLU，并将维度放缩为$(2/3) ⋅ 4d$
-
-![](image/image_cH74TcnK85.png)
 
 ## 1.4 旋转位置嵌入（RoPE）
 
@@ -97,7 +97,7 @@ $$
 f(\boldsymbol{q}, m)=\underbrace{\left(\begin{array}{ccccccc}\cos m \theta_{0} & -\sin m \theta_{0} & 0 & 0 & \cdots & 0 & 0 \\ \sin m \theta_{0} & \cos m \theta_{0} & 0 & 0 & \cdots & 0 & 0 \\ 0 & 0 & \cos m \theta_{1} & -\sin m \theta_{1} & \cdots & 0 & 0 \\ 0 & 0 & \sin m \theta_{1} & \cos m \theta_{1} & \cdots & 0 & 0 \\ \cdots & \cdots & \cdots & \cdots & \ddots & \cdots & \cdots \\ 0 & 0 & 0 & 0 & \cdots & \cos m \theta_{d / 2-1} & -\sin m \theta_{d / 2-1} \\ 0 & 0 & 0 & 0 & \cdots & \sin m \theta_{d / 2-1} & \cos m \theta_{d / 2-1}\end{array}\right)}_{\boldsymbol{R}_{d}}\left(\begin{array}{c}\boldsymbol{q}_{0} \\ \boldsymbol{q}_{1} \\ \boldsymbol{q}_{2} \\ \boldsymbol{q}_{3} \\ \cdots \\ \boldsymbol{q}_{d-2} \\ \boldsymbol{q}_{d-1}\end{array}\right)
 $$
 
-![](image/image_CVZIBvlTcD.png)
+![](image/image_8_B_nbHsni.png)
 
 RoPE 在 HuggingFace Transformer 库中代码实现如下所示：
 
@@ -183,7 +183,7 @@ Alpaca是在**LLaMA基础上使用52K指令数据精调的预训练模型**，�
 2.  第二步：基于上述种子任务，利 用text-davinci-003爬取指令数据
 3.  第三步：使用爬取下来的52K指令 数据在LLaMA上进行精调，最终 得到Alpaca
 
-![](image/image_-j860i8DgK.png)
+![](image/image_qmvGov6InM.png)
 
 ## 2.3 Self-instruct数据构造
 
@@ -207,7 +207,7 @@ Alpaca是在**LLaMA基础上使用52K指令数据精调的预训练模型**，�
 -   `input`（可选）: 任务上下文或输入信息，例如当指令是“对文章进行总结”，则input是文章内容
 -   `output`: 由text-davinci-003生成的针对指令的回复
 
-![](image/image_O1w6c88rjl.png)
+![](image/image_0k3hgI9kua.png)
 
 # 3.Llama-2
 
@@ -219,7 +219,7 @@ Llama 2: Open Foundation and Fine-Tuned Chat Models&#x20;
 
 与一代LLaMA主要区别体现在**更多的训练数据、更⻓的上下文窗口、GQA技术**等
 
-![](image/image_24Q7m-usAc.png)
+![](image/image_re5i75TH6P.png)
 
 模型结构的变动主要是体现在**GQA**和**FFN**缩放上
 
@@ -237,13 +237,13 @@ MHA、GQA、MQA的区别和联系，具体的优点如下：
 -   `Multi-Query Attention` 多个头之间可以共享KV对，因此速度上非常有优势，实验验证大约减少30-40%吞吐。
 -   `Group Query Attention` 没有像MQA那么极端，将query分组，组内共享KV，效果接近MQA，速度上与MQA可比较。
 
-![](image/image_E5817qCTJW.png)
+![](image/image_JKcphokS6S.png)
 
 Llama-2中使用了8个KV映射，即GQA-8，**GQA在多数任务上与MHA效果相当，且平均效果优于MQA；GQA和MQA均比MHA有更好的吞吐量**
 
 ## 3.3 源码
 
-![](image/image_XB1zAxr1uE.png)
+![](image/image_-1IrqoZB3h.png)
 
 # 4.Code Llama
 
@@ -261,7 +261,7 @@ Llama-2中使用了8个KV映射，即GQA-8，**GQA在多数任务上与MHA效果
 
 ## 4.2 模型训练流程
 
-![](image/image_5vFo-VwS3Q.png)
+![](image/image_GeouZkLgrp.png)
 
 ## 4.3 Code Infilling Task （7B/13B only）
 
@@ -272,7 +272,7 @@ Llama-2中使用了8个KV映射，即GQA-8，**GQA在多数任务上与MHA效果
 -   从完整的代码中选择一部分进行掩码（mask）并替换为`<MASK>`符号，构成上下文
 -   利用自回归的方法，根据上下文信息预测解码出被mask的代码部分
 
-![](image/image_TqLGy1fEBx.png)
+![](image/image_J0G-X9Ruu6.png)
 
 # 5.总结
 
