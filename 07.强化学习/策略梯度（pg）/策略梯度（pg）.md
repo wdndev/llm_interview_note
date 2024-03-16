@@ -90,7 +90,7 @@ $$
 其中，对$∇p_θ(τ)$使用$∇f(x)=f(x)∇log⁡f(x)$，得到
 
 $$
-∇p_θ(τ)\=p_θ(τ)∇log⁡~p_θ(τ)
+∇p_θ(τ)=p_θ(τ)∇log⁡~p_θ(τ)
 $$
 
 这个$∇f(x)=f(x)∇log⁡f(x)$大家可以把这个理解成一个固定的公式转换，记住即可。
@@ -177,7 +177,7 @@ $$
 
 定义网络结构：
 
-```
+```python
 class PolicyNet(nn.Module):
     def __init__(self, n_states_num, n_actions_num, hidden_size):
         super(PolicyNet, self).__init__()
@@ -201,7 +201,7 @@ class PolicyNet(nn.Module):
 
 定义PG类：
 
-```
+```python
 class PolicyGradient():
 
     def __init__(self, n_states_num, n_actions_num, learning_rate=0.01, reward_decay=0.95 ):
@@ -270,7 +270,7 @@ class PolicyGradient():
 
 训练模型：
 
-```
+```python
 import   gym,os
 import  numpy as np
 import  matplotlib

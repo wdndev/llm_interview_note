@@ -197,7 +197,7 @@ $$
 
 定义网络结构：
 
-```
+```python
 class FeedForwardNN(nn.Module):
 
   def __init__(self, in_dim, out_dim):
@@ -223,7 +223,7 @@ class FeedForwardNN(nn.Module):
 
 定义PPO类：
 
-```
+```python
 class PPO:
 
   def __init__(self, policy_class, env, **hyperparameters):
