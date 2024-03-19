@@ -97,17 +97,21 @@
 
 ##### 6.1 推理框架
 
-1. llm推理框架简单总结
-2. vLLM
-3. Text Generation Inference
-4. Faster Transformer
-5. TRT LLM
+1. [llm推理框架简单总结](06.推理/0.llm推理框架简单总结/0.llm推理框架简单总结.md "0.llm推理框架简单总结")
+2. [vLLM](06.推理/1.vllm/1.vllm.md "1.vllm")
+3. [Text Generation Inference](06.推理/2.text_generation_inference/2.text_generation_inference.md "2.text_generation_inference")
+4. [Faster Transformer](06.推理/3.faster_transformer/3.faster_transformer.md "3.faster_transformer")
+5.  [TRT LLM](06.推理/4.trt_llm/4.trt_llm.md "4.trt_llm")
 
 ##### 6.2 推理优化技术
 
-1. LLM推理优化技术
+1. [LLM推理优化技术](06.推理/llm推理优化技术/llm推理优化技术.md "llm推理优化技术")
+2. [LLM推理常见参数](06.推理/LLM推理常见参数/LLM推理常见参数.md)
+
 
 ##### 6.3 推理相关题目
+
+1. [推理](06.推理/1.推理/1.推理.md "1.推理")
 
 ### [07.强化学习](07.强化学习/README.md)
 
@@ -168,6 +172,7 @@
 
 ## 更新记录
 
+- 2024.03.19 : 推理参数
 - 2024.03.17 ： 强化学习部分，PG，PPO，RLHF，DPO
 - 2024.03.13 ： 强化学习题目
 - 2024.03.10 : LLMs相关课程
