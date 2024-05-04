@@ -42,7 +42,15 @@
         color:'rgb(90,90,90)',
         language:'chinese',
         isExpected: true
-    }
+    },
+    // 回到顶部
+    scrollToTop: {
+       auto: true,
+       text: '🔼',
+       right: 12,
+       bottom: 52,
+       offset: 25
+     },
     }
   </script>
   
@@ -77,6 +85,12 @@
   <!-- 侧边栏折叠 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
-  
+  <!-- 回到顶部功能 -->
+  <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+  <!-- 图片放大 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+ 
+
+
 </body>
 </html>
