@@ -7,6 +7,14 @@
 
 为了在低资源情况下，学习大模型，进行动手实践，创建 [tiny-llm-zh](https://github.com/wdndev/tiny-llm-zh)仓库，旨在构建一个小参数量的中文大语言模型，该项目已部署，可以在如下网站上体验：[ModeScope Tiny LLM](https://www.modelscope.cn/studios/wdndev/tiny_llm_92m_demo/summary)。
 
+
+其他学习资源推荐：
+
+- [llama3-from-scratch-zh](https://github.com/wdndev/llama3-from-scratch-zh) : 从零实现 llama3, 可加载 meta 官方权重，可在本地笔记本（16G内存）调试运行
+- [tiny-rag](https://github.com/wdndev/tiny-rag) : 实现一个简单的RAG系统，支持多路召回、重排等功能，快速了解搜索相关内容；
+
+
+
 ## 在线阅读
 
 在线阅读链接：[LLMs Interview Note](http://wdndev.github.io/llm_interview_note)
@@ -147,31 +155,7 @@
 * [98.相关课程](/98.相关课程/)
 * [99.参考资料](/99.参考资料/)
 
-## 更新记录
 
-- 2024.05.05 ：清华大学LLM课程
-- 2024.05.04 ： 使用 docsify 构建在线版本
-- 2024.05.01 : 解码参数，策略
-- 2024.04.15 : BERT细节
-- 2024.03.19 : 推理参数
-- 2024.03.17 ： 强化学习部分，PG，PPO，RLHF，DPO
-- 2024.03.13 ： 强化学习题目
-- 2024.03.10 :  LLMs相关课程
-- 2024.03.08 ： RAG技术
-- 2024.03.05 ：大模型评估，幻觉
-- 2024.01.26 ：语言模型简介
-- 2023.12.15 ： llama，chatglm 架构
-- 2023.12.02 ：LLM推理优化技术
-- 2023.12.01 ：调整目录
-- 2023.11.30 ：18.Layer-Normalization，21.Attention升级
-- 2023.11.29 ： 19.激活函数，22.幻觉，23.思维链
-- 2023.11.28 ： 17.位置编码
-- 2023.11.27 ： 15.token及模型参数， 16.tokenize分词
-- 2023.11.25 ： 13.分布式训练
-- 2023.11.23 ： 6.推理， 7.预训练， 8.评测，9.强化学习， 11.训练数据集，12.显存问题,14.agent
-- 2023.11.22 ： 5.高效微调
-- 2023.11.10 ： 4.LangChain
-- 2023.11.08 ： 建立仓库；1.基础，2.进阶，3.微调
 
 
 
