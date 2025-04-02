@@ -12,6 +12,7 @@
 
 - [llama3-from-scratch-zh](https://github.com/wdndev/llama3-from-scratch-zh) : 从零实现 llama3, 可加载 meta 官方权重，可在本地笔记本（16G内存）调试运行
 - [tiny-rag](https://github.com/wdndev/tiny-rag) : 实现一个简单的RAG系统，支持多路召回、重排等功能，快速了解搜索相关内容；
+- [AI 工程师八股](https://github.com/wdndev/ai_interview_note) : 包含深度学习、机器学习、推荐系统、搜索系统等通用知识
 
 
 
