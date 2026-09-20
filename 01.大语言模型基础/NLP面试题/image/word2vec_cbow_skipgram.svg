@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="title desc">
+  <title id="title">CBOW and Skip-Gram prediction directions</title>
+  <desc id="desc">CBOW predicts the center word fine from surrounding context words. Skip-Gram predicts surrounding context words from the center word fine.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#374151"/>
+    </marker>
+    <style>
+      .title { font: 700 22px Arial, sans-serif; fill: #111827; }
+      .label { font: 16px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+      .caption { font: 14px Arial, sans-serif; fill: #4b5563; text-anchor: middle; }
+      .node { fill: #f8fafc; stroke: #64748b; stroke-width: 1.5; rx: 6; }
+      .hidden { fill: #e0f2fe; stroke: #0284c7; stroke-width: 1.5; rx: 6; }
+      .edge { stroke: #374151; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .divider { stroke: #d1d5db; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <line class="divider" x1="480" y1="24" x2="480" y2="316"/>
+
+  <text class="title" x="240" y="32" text-anchor="middle">CBOW</text>
+  <text class="caption" x="240" y="56">context words → center word</text>
+  <rect class="node" x="195" y="78" width="90" height="42"/>
+  <text class="label" x="240" y="105">fine</text>
+  <rect class="hidden" x="130" y="158" width="220" height="42"/>
+  <text class="label" x="240" y="185">shared projection</text>
+  <path class="edge" d="M240 158 L240 124"/>
+
+  <rect class="node" x="20" y="250" width="90" height="42"/>
+  <rect class="node" x="130" y="250" width="90" height="42"/>
+  <rect class="node" x="260" y="250" width="90" height="42"/>
+  <rect class="node" x="370" y="250" width="90" height="42"/>
+  <text class="label" x="65" y="277">selling</text>
+  <text class="label" x="175" y="277">these</text>
+  <text class="label" x="305" y="277">leather</text>
+  <text class="label" x="415" y="277">jackets</text>
+  <path class="edge" d="M65 250 L165 204"/>
+  <path class="edge" d="M175 250 L215 204"/>
+  <path class="edge" d="M305 250 L265 204"/>
+  <path class="edge" d="M415 250 L315 204"/>
+  <text class="caption" x="240" y="322">input: surrounding context · output: center word</text>
+
+  <text class="title" x="720" y="32" text-anchor="middle">Skip-Gram</text>
+  <text class="caption" x="720" y="56">center word → context words</text>
+  <rect class="node" x="675" y="250" width="90" height="42"/>
+  <text class="label" x="720" y="277">fine</text>
+  <rect class="hidden" x="610" y="158" width="220" height="42"/>
+  <text class="label" x="720" y="185">shared projection</text>
+  <path class="edge" d="M720 250 L720 204"/>
+
+  <rect class="node" x="500" y="78" width="90" height="42"/>
+  <rect class="node" x="610" y="78" width="90" height="42"/>
+  <rect class="node" x="740" y="78" width="90" height="42"/>
+  <rect class="node" x="850" y="78" width="90" height="42"/>
+  <text class="label" x="545" y="105">selling</text>
+  <text class="label" x="655" y="105">these</text>
+  <text class="label" x="785" y="105">leather</text>
+  <text class="label" x="895" y="105">jackets</text>
+  <path class="edge" d="M645 158 L545 124"/>
+  <path class="edge" d="M695 158 L655 124"/>
+  <path class="edge" d="M745 158 L785 124"/>
+  <path class="edge" d="M795 158 L895 124"/>
+  <text class="caption" x="720" y="322">input: center word · output: surrounding context</text>
+</svg>
+
