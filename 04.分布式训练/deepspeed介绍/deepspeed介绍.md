@@ -84,8 +84,8 @@ ZeRO 将模型参数分成了三个部分：Optimizer States、Gradient 和 Mode
 
 ZeRO-Offload和ZeRO-Stage3是DeepSpeed中的不同的Zero-Redundancy Optimization技术，用于加速分布式训练，主要区别在资源占用和通信开销方面。
 
--   `ZeRO-Offload`将模型参数分片到不同的GPU上，通过交换节点间通信来降低显存占用，但需要进行额外的通信操作，因此可能会导致训练速度的下降。
--   \*\*`ZeRO-Stage3`\*\*将模型参数分布在CPU和GPU上，通过CPU去计算一部分梯度，从而减少显存占用，但也会带来一定的计算开销。
+-   `ZeRO-Offload`将模型参数分布在CPU和GPU上，通过CPU去计算一部分梯度，从而减少显存占用，但也会带来一定的计算开销。
+-   \*\*`ZeRO-Stage3`\*\*将模型参数分片到不同的GPU上，通过交换节点间通信来降低显存占用，但需要进行额外的通信操作，因此可能会导致训练速度的下降。
 
 ### **2.1 三个级别**
 
